@@ -32,4 +32,4 @@ Now this widget is not uploaded to pling, so you cannot install it from pling.
 
 # Contrubuting
 
-[Contribution guide]()
+[Contribution guide](https://github.com/stepanzubkov/year-progress-extended/blob/main/CONTRIBUTING.md)
