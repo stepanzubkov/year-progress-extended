@@ -1,6 +1,6 @@
 /*******************************************************************************
  *   Copyright (C) 2017 by Giancarlo Fringuello <gcarlo.f [at] gmail [dot] com> *
- *   Copyright (C) 2023 by Stepan Zubkov <zubkovbackend@gmail.com>              * 
+ *   Copyright (C) 2023 by Stepan Zubkov <zubkovbackend@gmail.com>              *
  *                                                                              *
  *   This program is free software; you can redistribute it and/or modify       *
  *   it under the terms of the GNU General Public License as published by       *
@@ -25,80 +25,76 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
-    property real timeout: 60000
-    property string currentText: ""
-    property real currentPercent: 0
+    property real timeout: 3600 * 1000
+    property string currentText: "-"
+    property real currentPercent: 0.0
     readonly property date currentDateTime: dataSource.data.Local ? dataSource.data.Local.DateTime : new Date()
     readonly property string currentYear: currentDateTime.getFullYear()
     property date prevDateTime
-    
-    function isLeapYear(p_year) 
+
+    function isLeapYear(year)
     {
-        return new Date(p_year, 1, 29).getDate() === 29;
+        return !(year % 100 ? year % 4 : year % 400)
     }
 
-    function calculatePercentage(p_first_day, p_second_day)
-    {
-        console.log("Calculating percentage: " + p_first_day.toDateString() + " : " + p_second_day.toDateString());
-        var l_result = 0.0;
+    function milliseconds_to_days(ms) {
+        return Math.floor(ms/ (1000 * 3600 * 24));
+    }
 
-        var l_days_total = 365;
+    function calculatePercentage(first_date, second_date)
+    {
+        console.log("Calculating percentage: " + first_date.toDateString() + " : " + second_date.toDateString());
+
+        var days_in_year = 365;
         if(isLeapYear(currentYear))
         {
             console.log("Year: " + currentYear + " is a leap year!")
-            l_days_total = 366;
+            days_in_year = 366;
         }
 
-        
-        var l_diff = Math.abs(p_second_day.getTime() - p_first_day.getTime());
-        var l_days_elapsed = Math.floor(l_diff / (1000 * 3600 * 24)); 
+        var milliseconds_elapsed = Math.abs(second_date.getTime() - first_date.getTime());
+        var days_elapsed = milliseconds_to_days(milliseconds_elapsed);
 
-        console.log("Days since: " + p_first_day.toDateString() + " -> " + l_days_elapsed + " (total:" + l_days_total + ")");
+        console.log("Days since: " + first_date.toDateString() + " -> " + days_elapsed + " (total:" + days_in_year + ")");
 
-        if(0 != l_days_elapsed)
+        var result_percentage = 0.0;
+        if(days_elapsed <= days_in_year)
         {
-            if(l_days_elapsed <= l_days_total)
-            {
-                l_result = (l_days_elapsed/l_days_total) * 100;
-            }
-        }
-        if(100 < l_result)
-        {
-            l_result = 100;
+            result_percentage = (days_elapsed/days_in_year) * 100;
         }
 
-        console.log(currentYear+ " is " +  l_result.toFixed(2) +  + "% complete");
-        return l_result.toFixed(1);
+        console.log(currentYear + " is " + result_percentage.toFixed(2) +  + "% complete");
+        return result_percentage.toFixed(1);
     }
 
     function checkDate()
     {
-        var l_today = new Date();        
-        var l_first_day = new Date(currentYear, 0, 1);
+        var today = new Date();
+        var first_day_of_year = new Date(currentYear, 0, 1);
 
-        currentPercent = calculatePercentage(l_first_day, l_today);
+        currentPercent = calculatePercentage(first_day_of_year, today);
         currentText = currentYear + " is " + currentPercent + "% complete";
     }
-    
+
     PlasmaCore.DataSource {
         id: dataSource
         engine: "time"
         connectedSources: ["Local"]
-        interval: 60000
-        intervalAlignment: PlasmaCore.Types.AlignToMinute
+        interval: timeout
+        intervalAlignment: PlasmaCore.Types.AlignToHour
     }
-    
+
     onCurrentDateTimeChanged:
-    {   
+    {
         if(prevDateTime.getDay() != currentDateTime.getDay())
         {
-            console.log("onCurrentDateTimeChanged " +  currentDateTime + ", day changed from " + prevDateTime.getDay() + " to " + currentDateTime.getDay())
-            prevDateTime = currentDateTime
+            console.log("onCurrentDateTimeChanged " +  currentDateTime + ", day changed from " + prevDateTime.getDay() + " to " + currentDateTime.getDay());
+            prevDateTime = currentDateTime;
             checkDate();
         }
     }
 
-    
+
     Plasmoid.fullRepresentation: ColumnLayout {
         anchors.fill: parent
         spacing: 0

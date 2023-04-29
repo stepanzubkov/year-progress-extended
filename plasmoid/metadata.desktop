@@ -10,7 +10,7 @@ X-KDE-PluginInfo-Version=1.0.4
 X-KDE-PluginInfo-Category=Date and Time
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
-X-KDE-PluginInfo-Name=org.kde.yearprogressplasmoid
+X-KDE-PluginInfo-Name=com.github.year-progress-extended.stepanzubkov
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
