@@ -107,6 +107,7 @@ Item {
             value: currentPercent
             maximumValue: 100
             minimumValue: 0
+            width: parent.width || 500
         }
     }
     Component.onCompleted:

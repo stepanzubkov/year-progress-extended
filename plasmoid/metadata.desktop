@@ -1,16 +1,16 @@
 [Desktop Entry]
-Name=YearProgressPlasmoid
+Name=Year Progress Extended
 Icon=view-calendar
 Type=Service
 ServiceTypes=Plasma/Applet
 
-X-KDE-PluginInfo-Author=Giancarlo Fringuello
-X-KDE-PluginInfo-Email=gcarlo.f [at] gmail [dot] com
-X-KDE-PluginInfo-Version=1.0.4
+X-KDE-PluginInfo-Author=Stepan Zubkov
+X-KDE-PluginInfo-Email=zubkovbackend@gmail.com
+X-KDE-PluginInfo-Version=1.0.0
 X-KDE-PluginInfo-Category=Date and Time
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
-X-KDE-PluginInfo-Name=com.github.year-progress-extended.stepanzubkov
+X-KDE-PluginInfo-Name=com.github.stepanzubkov.year-progress-extended
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
