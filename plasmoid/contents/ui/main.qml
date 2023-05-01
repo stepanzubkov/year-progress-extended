@@ -104,7 +104,7 @@ Item {
             id: percentageLabel 
             Layout.alignment: Qt.AlignCenter
             text: currentText
-            font.pointSize: 16
+            font.pointSize: plasmoid.configuration.labelFontSize
         }
         PlasmaComponents.ProgressBar {
             id: progressBar
