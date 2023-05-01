@@ -25,6 +25,8 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
+    Plasmoid.backgroundHints: PlasmaCore.Types.DefaultBackground | PlasmaCore.Types.ConfigurableBackground
+
     property real timeout: 3600 * 1000
     property string currentText: "-"
     property real currentPercent: 0.0
@@ -32,9 +34,9 @@ Item {
     readonly property string currentYear: currentDateTime.getFullYear()
     property date prevDateTime
 
-    function isLeapYear(year)
-    {
-        return !(year % 100 ? year % 4 : year % 400)
+
+    function isLeapYear(year) {
+        return !(year % 100 ? year % 4 : year % 400);
     }
 
     function milliseconds_to_days(ms) {
@@ -99,15 +101,17 @@ Item {
         anchors.fill: parent
         spacing: 0
         PlasmaComponents.Label {
+            id: percentageLabel 
             Layout.alignment: Qt.AlignCenter
             text: currentText
+            font.pointSize: 16
         }
         PlasmaComponents.ProgressBar {
+            id: progressBar
             Layout.alignment: Qt.AlignCenter
             value: currentPercent
             maximumValue: 100
             minimumValue: 0
-            width: parent.width || 500
         }
     }
     Component.onCompleted:
