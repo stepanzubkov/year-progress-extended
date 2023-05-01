@@ -20,9 +20,10 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.1
+import QtQuick.Controls 2.0
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 Item {
     Plasmoid.backgroundHints: PlasmaCore.Types.DefaultBackground | PlasmaCore.Types.ConfigurableBackground
@@ -100,18 +101,18 @@ Item {
     Plasmoid.fullRepresentation: ColumnLayout {
         anchors.fill: parent
         spacing: 0
-        PlasmaComponents.Label {
+        PlasmaComponents3.Label {
             id: percentageLabel 
             Layout.alignment: Qt.AlignCenter
             text: currentText
             font.pointSize: plasmoid.configuration.labelFontSize
         }
-        PlasmaComponents.ProgressBar {
+        PlasmaComponents3.ProgressBar {
             id: progressBar
             Layout.alignment: Qt.AlignCenter
             value: currentPercent
-            maximumValue: 100
-            minimumValue: 0
+            to: 100
+            from: 0        
         }
     }
     Component.onCompleted:
