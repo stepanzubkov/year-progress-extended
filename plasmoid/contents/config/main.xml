@@ -8,7 +8,7 @@
   <group name="General">
     <entry name="labelFontSize" type="Int">
       <label>Font size of percentage label</label>
-      <default>16</default>
+      <default>14</default>
     </entry>
   </group>
 </kcfg>

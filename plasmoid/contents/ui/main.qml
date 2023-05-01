@@ -109,6 +109,7 @@ Item {
         }
         PlasmaComponents3.ProgressBar {
             id: progressBar
+            implicitWidth: 300
             Layout.alignment: Qt.AlignCenter
             value: currentPercent
             to: 100
