@@ -15,3 +15,4 @@ X-KDE-PluginInfo-Name=com.github.stepanzubkov.year-progress-extended
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 
+Name[ru]=Расширенный виджет годового прогресса

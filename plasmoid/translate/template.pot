@@ -1,0 +1,44 @@
+# Translation of year-progress-extended in LANGUAGE
+# Copyright (C) 2023
+# This file is distributed under the same license as the year-progress-extended package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: year-progress-extended\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-02 11:26+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.desktop
+msgid "Year Progress Extended"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Label font size:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgctxt "%1 is font size in points (pt)"
+msgid "%1 pt"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Label color:"
+msgstr ""
+
+#: ../contents/ui/main.qml
+msgctxt "%1 is current year, %2 is percentage"
+msgid "%1 is %2% complete"
+msgstr ""
