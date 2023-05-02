@@ -16,6 +16,8 @@ Then install programm for translations. I use and recommend [Poedit](https://poe
 
 Create a fork of this project. To do that, click on the "Fork" button and fill out the form.
 
+![](https://i.postimg.cc/bNYScd85/Screenshot-20230502-220436.png)
+
 Then open project in Poedit. Fill out translations and save file. Also specify your name and email in file header.
 
 Thorougly check your translations. Probably you are the only translator in your language team.
@@ -23,5 +25,7 @@ Thorougly check your translations. Probably you are the only translator in your 
 ## 3. Contribution
 
 Push changes to github repo and open pull request. Then I will merge your pull request and your translations will appear in next release.
+
+![](https://i.postimg.cc/PqHk9vnp/Screenshot-20230502-220421.png)
 
 Good luck! :)
