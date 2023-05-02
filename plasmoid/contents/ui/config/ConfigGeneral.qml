@@ -34,9 +34,9 @@ Item {
     Kirigami.FormLayout {
         PlasmaComponents3.SpinBox {
             id: labelFontSize
-            Kirigami.FormData.label: "Label font size:"
+            Kirigami.FormData.label: i18n("Label font size:")
             textFromValue: function (value) {
-                return `${value} pt`
+                return i18nc("%1 is font size in points (pt)", "%1 pt", value)
             }
             stepSize: 1
             from: 10

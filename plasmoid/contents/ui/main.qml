@@ -56,7 +56,7 @@ Item {
         }
 
         var milliseconds_elapsed = Math.abs(second_date.getTime() - first_date.getTime());
-        var days_elapsed = milliseconds_to_days(milliseconds_elapsed);
+        jar days_elapsed = milliseconds_to_days(milliseconds_elapsed);
 
         console.log("Days since: " + first_date.toDateString() + " -> " + days_elapsed + " (total:" + days_in_year + ")");
 
@@ -76,7 +76,7 @@ Item {
         var first_day_of_year = new Date(currentYear, 0, 1);
 
         currentPercent = calculatePercentage(first_day_of_year, today);
-        currentText = currentYear + " is " + currentPercent + "% complete";
+        currentText = i18nc("%1 is current year, %2 is percentage", "%1 is %2\% complete", currentYear, currentPercent);
     }
 
     PlasmaCore.DataSource {
@@ -113,7 +113,7 @@ Item {
             Layout.alignment: Qt.AlignCenter
             value: currentPercent
             to: 100
-            from: 0        
+            from: 0
         }
     }
     Component.onCompleted:
