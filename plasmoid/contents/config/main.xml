@@ -10,5 +10,9 @@
       <label>Font size of percentage label</label>
       <default>14</default>
     </entry>
+    <entry name="labelColor" type="Color">
+      <label>Color of label</label>
+      <default>#000000</default>
+    </entry>
   </group>
 </kcfg>

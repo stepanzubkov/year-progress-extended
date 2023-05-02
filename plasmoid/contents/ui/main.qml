@@ -56,7 +56,7 @@ Item {
         }
 
         var milliseconds_elapsed = Math.abs(second_date.getTime() - first_date.getTime());
-        jar days_elapsed = milliseconds_to_days(milliseconds_elapsed);
+        var days_elapsed = milliseconds_to_days(milliseconds_elapsed);
 
         console.log("Days since: " + first_date.toDateString() + " -> " + days_elapsed + " (total:" + days_in_year + ")");
 
@@ -106,6 +106,7 @@ Item {
             Layout.alignment: Qt.AlignCenter
             text: currentText
             font.pointSize: plasmoid.configuration.labelFontSize
+            color: plasmoid.configuration.labelColor
         }
         PlasmaComponents3.ProgressBar {
             id: progressBar
