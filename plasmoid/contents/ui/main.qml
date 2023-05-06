@@ -89,12 +89,9 @@ Item {
 
     onCurrentDateTimeChanged:
     {
-        if(prevDateTime.getDay() != currentDateTime.getDay())
-        {
-            console.log("onCurrentDateTimeChanged " +  currentDateTime + ", day changed from " + prevDateTime.getDay() + " to " + currentDateTime.getDay());
-            prevDateTime = currentDateTime;
-            checkDate();
-        }
+        console.log("onCurrentDateTimeChanged " +  currentDateTime + ", day changed from " + prevDateTime.getDay() + " to " + currentDateTime.getDay());
+        prevDateTime = currentDateTime;
+        checkDate();
     }
 
 
