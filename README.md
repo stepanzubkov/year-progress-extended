@@ -1,9 +1,14 @@
 # Year Progress Extended
+
+![](https://img.shields.io/github/issues/stepanzubkov/year-progress-extended/good%20first%20issue?style=for-the-badge)
+
+![](https://www.gnu.org/graphics/gplv3-127x51.png)
+
 Plasmoid (KDE Plasma widget) to show progress of current year on your desktop. Fork of https://www.pling.com/p/1252880. Author of original project is [Refused](https://www.pling.com/u/Refused).
 
-*Screenshot of widget on desktop*
+*Different looks of widget*
 
-![](https://images.pling.com/img/00/00/08/45/60/1252880/048cfd22ae58acc3c17c7a4dc6b7caab74f8.png)
+![](https://i.postimg.cc/W1Lk81Hw/Screenshot-20230506-130616.png)
 
 # Installation
 
