@@ -33,7 +33,7 @@ zip -r plasmoid.plasmoid plasmoid
 
 ## From Pling/KDE Store
 
-Now this widget is not uploaded to pling, so you cannot install it from pling.
+You can install widget from https://www.pling.com/p/2031115/ .
 
 # Contrubuting
 
