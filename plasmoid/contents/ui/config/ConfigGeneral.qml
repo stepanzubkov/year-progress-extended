@@ -18,9 +18,8 @@
 
 import QtQuick 2.2
 import QtQuick.Window 2.2
-import QtQuick.Controls 1.3
+import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.1
-import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0 as KQuick
 import org.kde.kirigami 2.9 as Kirigami
@@ -33,7 +32,7 @@ Item {
     property alias cfg_labelColor: labelColor.color
 
     Kirigami.FormLayout {
-        PlasmaComponents3.SpinBox {
+        SpinBox {
             id: labelFontSize
             Kirigami.FormData.label: i18n("Label font size:")
             textFromValue: function (value) {
